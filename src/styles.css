@@ -1,0 +1,53 @@
+@use '@angular/material' as mat;
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+  background-color: rgb(255, 255, 255,0);
+}
+
+
+.custom-Button{
+  margin-top: 2% ;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  padding: 10px
+
+}
+
+.border-button{
+  border-radius: 27px !important;
+  width: 100% !important;
+  height: 45px !important;
+  color: #8F0A10 !important;
+
+}
+
+.custom-Container {
+
+  min-height: 550px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .1875rem;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 15px;
+  border: 1px ;
+}
+
+
+.input-margin{
+  margin-top: 2%;
+}

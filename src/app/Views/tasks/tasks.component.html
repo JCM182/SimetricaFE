@@ -1,0 +1,75 @@
+<div class="container-fluid" style="background-color: white; height: 100%;">
+  <div class="ebContainer col-12" >
+    <!-- Tittle -->
+    <div class="row">
+      <span>
+        <h1 class="EBtitles">Tareas</h1>
+        <hr class="underline-board" />
+      </span>
+    </div>
+    <!-- Tittle -->
+    <div class="demo-button-container margin-button eb-button">
+      <!-- <button mat-raised-button (click)="openDialog()" class="demo-button">
+        Agregar Sucursal
+      </button> -->
+
+
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-10 offset-1" style="padding: 15px;">
+
+              <!-- <button type="button" class="btn btn-primary submit-maging"  style="width: 100%; height: 45px; border-radius: 20px; background-color: white; color: rgb(241, 90, 45);" (click)="TaskForm.valid ? Login(TaskForm.value) : ''"  value=""   >Acceder  <i class=" fa fa-sign-in" aria-hidden="true"></i> </button> -->
+              <button mat-raised-button  class="custom-Button border-button" style="  width: 100%;" (click)=" GoToAdd()"  value="" >Nueva Tarea  <i class=" fa fa-sign-in" aria-hidden="true"></i></button>
+              <!-- <ng-content></ng-content> -->
+           </div>
+      </div>
+      <div class="example-container mat-elevation-z8 scrollmenu">
+
+        <mat-table [dataSource]="dataSource" style="min-width: 600px;"  matSort>
+          <!-- ID Column -->
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Tarea
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="id">
+              {{ row.description }}
+            </mat-cell>
+          </ng-container>
+
+
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="creationDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha Registro
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="creationDate">
+              {{ row.creationDate | date :'medium' }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Color Column -->
+          <ng-container matColumnDef="updateDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha Modificacion
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="color">
+              {{ row.updateDate | date :'medium' }}
+            </mat-cell>
+          </ng-container>
+
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+      <!-- Pagination -->
+
+      <!-- Pagination -->
+    </div>
+  </div>
+</div>
+
+<!-- <ngx-loading [show]="loading"></ngx-loading> -->

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="container-fluid  ">
+
+
+
+
+      <div class="col-10 offset-1   col-sm-8 offset-sm-2 col-md-8 offset-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 custom-Container loginContainer" style=" height: 650px;">
+
+  <div class="row">
+    <h1 class="" style="text-align: center; color: #F3C25F; font-weight: bold;">Nueva Tarea</h1>
+  </div>
+
+
+
+        <form
+          class="center"
+          #TaskForm="ngForm"
+          style="margin-top: 20%;"
+          (keydown.enter)="TaskForm.valid ? SaveTask(TaskForm.value) : ''"
+          (submit)="TaskForm.valid ? SaveTask(TaskForm.value) : ''"
+        >
+          <div class="row">
+            <!-- Username -->
+
+              <mat-form-field appearance="fill" class="input-margin col-md-10 offset-md-1  col-12">
+
+                 <i matTextPrefix class="fa fa-user-o" aria-hidden="true" style="font-size: x-large; padding: 5px;">  </i>
+
+
+                <input
+                  type="text"
+                  matInput
+                  placeholder="description"
+                  required
+                  #description="ngModel"
+                  ngModel
+                  class="form-control input-field"
+                  name="description"
+                />
+                <mat-error *ngIf="description.invalid"
+                  >Este campo es obligatorio</mat-error
+                >
+              </mat-form-field>
+
+
+            <!-- Username -->
+
+          </div>
+
+
+
+
+          <div class="col-md-6 offset-md-3 col-10 offset-1">
+              <div class="form-group">
+                  <!-- <button type="button" class="btn btn-primary submit-maging"  style="width: 100%; height: 45px; border-radius: 20px; background-color: white; color: rgb(241, 90, 45);" (click)="TaskForm.valid ? Login(TaskForm.value) : ''"  value=""   >Acceder  <i class=" fa fa-sign-in" aria-hidden="true"></i> </button> -->
+                  <button mat-raised-button  class="custom-Button border-button" style="  width: 100%;" (click)="TaskForm.valid ? SaveTask(TaskForm.value) : ''"  value="" >Guardar  <i class=" fa fa-sign-in" aria-hidden="true"></i></button>
+                  <!-- <ng-content></ng-content> -->
+               </div>
+
+
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <ngx-loading [show]="loading"></ngx-loading> -->
+<!-- <p> {{ja.value | json}} </p> -->

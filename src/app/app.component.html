@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="UserIsLoggedIn()" >
+
+  <app-in-layout *ngSwitchCase="true"> </app-in-layout>
+
+
+  <app-out-layout *ngSwitchDefault>
+
+  </app-out-layout>
+
+</ng-container>
